@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Airline Form</title>
+</head>
+<body>
+<h1>Flight</h1> <br><br>
+
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <label><input type="radio" name="trip" value="round trip" checked>Round Trip</label>
+
+    <label><input type="radio" name="trip" value="one way">One way</label>
+
+    <label><input type="checkbox" name="redeem miles" value="I want to redeem miles">Redeem miles</label>
+
+    <label>From<br><input type="text" name="From" placeholder="DFW" value=""><br></label>
+
+    <label>To<br><input type="text" name="To" placeholder="City or airport" value=""><br></label>
+
+    <label>Number of passengers <br>
+        <select name="number of passengers" id="">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+    </label>
+    <br>
+    <label>
+        Depart<br>
+        <input type="date">
+    </label>
+    <br>
+    <label>
+        Return<br>
+        <input type="date">
+    </label>
+    <button type="submit">Search</button>
+</form>
+
+</body>
+</html>
