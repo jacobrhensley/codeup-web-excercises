@@ -1,17 +1,13 @@
 html {
     font-style: italic;
-    background-image: ;
-    background-repeat: ;
 }
 
 .fancy-header {
-}
-    color: purple; /* single line comment */
+    /* single line comment */
     text-decoration: underline;
     text-align: center;
 }
 header {
-    background-color: #A1A6B4;
     text-align: center;
     padding: 30px
 }
