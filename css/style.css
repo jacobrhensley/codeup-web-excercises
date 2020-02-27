@@ -1,4 +1,11 @@
+html {
+    font-style: italic;
+    background-image: ;
+    background-repeat: ;
+}
+
 .fancy-header {
+}
     color: purple; /* single line comment */
     text-decoration: underline;
     text-align: center;
@@ -9,10 +16,37 @@ header {
     padding: 30px
 }
 body {
-    background-color: #94C5CC;
     text-align: center;
     list-style-position: inside;
+    background-image: url("../imgs/webb/webb.png");
 }
 h2 {
     text-decoration: underline;
+}
+ul, ol {
+    list-style: none;
+}
+#company-morals {
+    background-image: url("../imgs/nature.jpeg");
+    background-size: 660px;
+    color: floralwhite;
+}
+table, th, td {
+    border: 1px solid black;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 30px;
+
+}
+a:visited {
+    color:black;
+}
+a:link {
+    color:red;
+}
+a:hover {
+    color:blue;
+}
+a:active {
+    color:green;
 }
