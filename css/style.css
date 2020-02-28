@@ -1,7 +1,3 @@
-html {
-    font-style: italic;
-}
-
 .fancy-header {
     /* single line comment */
     text-decoration: underline;
@@ -12,6 +8,7 @@ header {
     padding: 30px
 }
 body {
+    font-style: italic;
     text-align: center;
     list-style-position: inside;
     background-image: url("../imgs/webb/webb.png");
@@ -27,18 +24,18 @@ ul, ol {
     background-size: 660px;
     color: floralwhite;
 }
-table, th, td {
-    border: 1px solid black;
+tr>td {
+    border: .5px solid black;
     margin-left:auto;
     margin-right:auto;
     font-size: 30px;
-
+    padding: 10px;
 }
 a:visited {
     color:black;
 }
 a:link {
-    color:red;
+    color:purple;
 }
 a:hover {
     color:blue;
