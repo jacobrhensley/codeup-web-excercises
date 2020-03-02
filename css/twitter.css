@@ -103,7 +103,7 @@ a {
 .profile-details {
     padding: 0px;
     float: left;
-    width: calc(25% - .5em);
+    width: calc(25% - 1em);
     margin: 0 .5em;
 }
 
@@ -117,7 +117,7 @@ a {
 .who-to-follow {
     padding: 0px;
     float: right;
-    width: calc(24% - 1em);
+    width: calc(25% - 1em);
     margin: 0 .5em;
 }
 
