@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    border: 0;
+}
+.nav-main {
+    background-color: #333333;
+}
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-item {
+    padding: 1.5em;
+    display: inline-block;
+}
+.apple-logo {
+    width: 75%;
+}
+li.nav-item {
+    height: 44px;
+    width: 47px;
+    padding: 0px 10px;
+}
+ul.list {
+    margin: 0 140px 0 140px;
+}
+.mag {
+    width: 30%;
+}
+.bag {
+    width: 50%;
+}
+a:visited {
+    color: #FFFFFF;
+}
+a:link {
+    color: #FFFFFF;
+}
