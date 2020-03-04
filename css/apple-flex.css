@@ -23,8 +23,11 @@ ul {
 li {
     line-height: 50px;
     color: #FFFFFF;
+    margin: auto;
 }
-
+a {
+    text-decoration: none;
+}
 a:link {
     color: #FFFFFF;
 }
