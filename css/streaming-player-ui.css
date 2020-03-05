@@ -120,6 +120,7 @@ nav a:hover {
     /*animation-duration: .4s;
     animation-name: borders;
     animation-iteration-count: infinite;*/
+    transition: border .2s;
     /* TODO: add a property that causes a transition of the border from lightgrey to near black in .2 seconds */
 }
 
