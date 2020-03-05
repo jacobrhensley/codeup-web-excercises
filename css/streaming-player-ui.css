@@ -117,9 +117,17 @@ nav a:hover {
     height: 200px;
     border-radius: 10px;
     position: relative;
+    /*animation-duration: .4s;
+    animation-name: borders;
+    animation-iteration-count: infinite;*/
     /* TODO: add a property that causes a transition of the border from lightgrey to near black in .2 seconds */
 }
 
+/*@keyframes borders {
+    0% {border-color: lightgrey}
+    50% {border-color: #333333}
+
+}*/
 .card:hover {
     border-color: #111;
 }
