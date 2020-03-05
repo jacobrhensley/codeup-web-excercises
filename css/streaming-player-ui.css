@@ -11,10 +11,14 @@ body {
 }
 
 .wrapper {
+    display: grid;
     /* TODO: make the wrapper a grid container */
+    grid-template-columns: 1fr 400px 400px 400px 1fr;
     /* TODO: define five columns where the middle three columns are 400px and the outer columns fill the remaining space */
+    grid-gap: 1em;
     /* TODO: add a gap of 1em around all grid items */
     /* no row properties are needed */
+    height: 100vh;
     /* TODO: the height of the wrapper should be 100 viewport height units */
 }
 
@@ -26,21 +30,28 @@ ul {
 
 header {
     background: purple;
+    grid-area: 1 / 2 / 2 / 5;
     /* TODO: define the grid area of header such that it takes up the first row and middle three columns */
 }
 
 nav {
+    grid-area: 2 / 2 / 3 / 3;
     /* TODO: define the grid area of nav such that it takes up the second column of the second row  */
 }
 
 main {
+    grid-area: 2 / 3 / 3 / 5;
     /* TODO: define the grid area of main such that it takes up the columns 3 and 4 of the second row  */
+    display: grid;
     /* TODO: make main a grid container as well */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
     /* TODO: define main to contain three columns that together take up equally the full width of main and have a 1em gap between grid items */
     overflow: auto;
 }
 
 header ul {
+    display: flex;
     /* TODO: use flex box to horizontally line up all list items */
 }
 
@@ -50,7 +61,7 @@ header a {
 
 header ul li:nth-of-type(2) {
     /* TODO: uncomment the next line and add a value which causes Flexbox to automatically fill in extra space on it's left side */
-    /*margin-left: ;*/
+    margin-left: auto;
     border-right: 1px solid white;
 }
 
@@ -61,6 +72,7 @@ header a:hover {
 
 .header-background {
     background: purple;
+    grid-area: 1 / 1 / 2/ 6;
     /* TODO: define the grid area of this element to take up the entire first row of the .container grid  */
 }
 
