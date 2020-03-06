@@ -10,7 +10,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: .5em;
-    height: 700px
+    height: 100vh
 }
 
 .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten{
