@@ -2,14 +2,6 @@ a:hover{
     background-color: #f0f0f0;
 }
 
-#navbarSupportedContent{
-    flex-grow: 0;
-}
-
- .sign-up{
-     margin-left: 475px;
-}
-
 .jumbotron {
     background-image: url("../imgs/pizza.png");
     padding: 64px 0;
