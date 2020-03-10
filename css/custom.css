@@ -1,0 +1,59 @@
+a:hover{
+    background-color: #f0f0f0;
+}
+
+#navbarSupportedContent{
+    flex-grow: 0;
+}
+
+ .sign-up{
+     margin-left: 475px;
+}
+
+.jumbotron {
+    background-image: url("../imgs/pizza.png");
+    padding: 64px 0;
+}
+
+.jumbotron h1{
+    opacity: 60%;
+    text-align: center;
+    background-color: white;
+    width: 100%;
+}
+.card-header{
+    background-color: #0486ff;
+    color: #FFFFFF;
+}
+
+.sub-card-header{
+    background-color: rgba(200, 200, 201, 0.35);
+    color: #111111;
+}
+
+.btn-outline-success{
+    color: black;
+    border: 1px solid darkgrey;
+}
+.btn-outline-success:hover{
+    background-color: #f0f0f0;
+    color: #111111;
+    border: 1px solid black;
+}
+
+.sub-body{
+    padding: 0;
+}
+.sub-body p{
+    margin: 20px;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-secondary{
+    background-color: #157ffb;
+    border: none;
+}
