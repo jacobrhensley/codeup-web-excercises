@@ -55,21 +55,23 @@
     //Write a JS function called sayHello that, when sent a name like "Douglas",
     //returns the string "Hello Douglas!"
     function sayHello(name) {
-            return "Hello "+ name + "!"
+        return "Hello " + name + "!"
     }
+
     console.log(sayHello('Jacob'));
 
     //Exercise 10
     //Write a function called firstItem that takes in an array and returns the first item in the array.
-function firstItem(array) {
- return array[0]
+    function firstItem(array) {
+        return array[0]
     }
+
     console.log("first item of the array= " + firstItem(FavoriteFoods))
 
     //Ecercise 11
     //Create a function that returns the type of value you enter in the input parameter of the function
 
-    function checkType(aValue){
+    function checkType(aValue) {
         return typeof aValue;
     }
 
@@ -80,12 +82,31 @@ function firstItem(array) {
     //Exercise 12
     //create a function that takes in an array of values and console.logs the data of each type
 
-    function checkTypes(anArray){
-        for(var x = 0; x < anArray.length; x++){
-            console.log( checkType(anArray[x]));
+    function checkTypes(anArray) {
+        for (var x = 0; x < anArray.length; x++) {
+            console.log(checkType(anArray[x]));
         }
     }
 
+    console.log(checkTypes(FavoriteFoods))
+    //Exercise 13
+    //Write a function called isString that accepts a single input, and returns true if the data type is a string or false if it is not a string.
+
+    function isString(input) {
+        return checkType(input === "string")
+    }
+
+    console.log(isString(true));
+    console.log(isString("hello"));
+
+    //Exercise 14
+    //Write a function called isNumber that accepts a single input, and returns true if the data type is a number or false if it is not
+
+    function isNumber(input) {
+        return typeof (input === number)
+        }
+        console.log(isNumber("Hi"));
+        console.log(isNumber("42"));
 
 </script>
 </body>
