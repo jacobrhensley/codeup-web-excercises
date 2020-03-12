@@ -1,0 +1,74 @@
+body {
+background-color: #f0f0f0;
+    line-height: 75px;
+}
+
+.company{
+    font-family: 'Abel', sans-serif;
+    margin: 0;
+}
+
+.logo{
+    height: 105px;
+    width: 105px;
+    float: top;
+}
+
+/*nav{*/
+/*    background-color: #FFFFFF;*/
+    /*height: 50px;*/
+    /*width: 100%;*/
+    /*clear: top;*/
+/*}*/
+
+.navigate{
+    list-style: none;
+    font-family: 'Abel', sans-serif;
+}
+
+.navigate li{
+    margin: 0 3px;
+}
+
+.description{
+    font-family: 'Anton', sans-serif;
+}
+
+#design{
+    background-color: #e6563b;
+}
+
+#develop{
+    background-color: #eb9d3a;
+}
+
+#support{
+    background-color: #7cb06c;
+}
+
+#host{
+    background-color: #00aba9;
+}
+
+#host, #support, #develop, #design {
+    max-height: 105px;
+    max-width: 105px;
+    border: 5px solid white;
+    border-radius: 50%;
+    color: white;
+    margin: 10px;
+}
+
+#host, #support, #develop, #design p{
+    line-height: 95px;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+}
+
+a:link{
+    color: black;
+}
+
+a:visited{
+    color: black;
+}
