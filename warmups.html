@@ -13,101 +13,136 @@
     //  Exercise 1
     // On the line below, create a variable named onMarsRightNow and assign it the boolean value of false
     var onMarsRightNow = false;
+    console.log(onMarsRightNow == false);
+    // console.log(onMarsRightNow == true);
 
     // Exercise 2
     // Create an array with the names of five of your favorite foods.
-    var FavoriteFoods = ["pizza", "burger", "empanada", "bbq", "soup"];
-    console.log(FavoriteFoods)
-
+    var favoriteFoods = ["Sushi", "Pizza", "Steak", "Pazole", "Tacos"];
+    console.log(favoriteFoods);
 
     // Exercise 3
-    //Create an array of numbers from 1-10.
-    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    console.log(numbers)
+    // Create an array of numbers from 1 to 10.
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    console.log(numbers);
 
-    //Exercise 4
-    // Add 1 item to the end of your favorite foods array
-    FavoriteFoods.push("hotdog")
-    console.log(FavoriteFoods)
+    // Exercise 4
+    // Add 1 item to the end of your favorite foods array.
+    favoriteFoods.push('Grilled Cheese');
+    console.log('Used push to add an item to the array.', favoriteFoods)
 
-    //Exercise 5
-    //Reverse the array
-    FavoriteFoods.reverse();
-    console.log('reversed array', FavoriteFoods)
+    // Exercise 5
+    // Reverse the favorite foods array array.
+    favoriteFoods.reverse();
+    console.log('Reversed the favorite foods array.', favoriteFoods)
 
-    //Exercise 6
-    // Sort FavoriteFoods array in alphabetical order
-    FavoriteFoods.sort();
-    console.log('alphabetized array', FavoriteFoods)
+    // Exercise 6
+    // Sort the favorite foods array in alphabetical order.
+    favoriteFoods.sort();
+    console.log('Sort favorite foods in alphabetical order', favoriteFoods);
 
-    //Exercise 7
-    //Sort the FavoriteFoods array in reverse alphabetical order
-    FavoriteFoods.reverse();
-    console.log('reversed alphabetical array', FavoriteFoods)
+    // Exercise 7
+    // Sort the favorite foods array in reverse alphabetical order.
+    favoriteFoods.sort().reverse();
+    console.log('Sort favorite foods in reverse alphabetical order.', favoriteFoods);
 
-    //Exercise 8
-    //Create a new array of fruits and add that array to the end of your FavoriteFoods array
-    var fruits = ["mango", "banana", "blueberry", "kiwi", "strawberry"];
-    var FavoriteFoodsandFruits = FavoriteFoods.concat(fruits);
-    console.log(FavoriteFoodsandFruits)
+    // Exercise 8
+    // Create a new array of fruits and add that array to the end of your favorite foods array.
+    var fruits = ['banana', 'apples', 'apricots', 'grapes'];
+    var concatenatedArrays = favoriteFoods.concat(fruits);
+    console.log('Concatenate two arrays.', concatenatedArrays);
 
-    //Exercise 9
-    //Write a JS function called sayHello that, when sent a name like "Douglas",
-    //returns the string "Hello Douglas!"
+    // Cannot use push to do this. :)
+    // favoriteFoods.push(fruits);
+    // console.log(favoriteFoods);
+
+    // Exercise 9
+    // Write a javascript function called sayHello that, when sent a name like "Douglas",
+    // returns the string "Hello Douglas!"
     function sayHello(name) {
-        return "Hello " + name + "!"
+        return "Hello " + name + "!";
     }
 
-    console.log(sayHello('Jacob'));
+    console.log(sayHello('Apex'));
 
-    //Exercise 10
-    //Write a function called firstItem that takes in an array and returns the first item in the array.
+    // Exercise 10
+    // Write a function called firstItem that takes in an array and returns the first item in the array.
     function firstItem(array) {
-        return array[0]
+        return array[0];
     }
 
-    console.log("first item of the array= " + firstItem(FavoriteFoods))
+    console.log('Return the first item of an array.', firstItem(favoriteFoods));
 
-    //Ecercise 11
-    //Create a function that returns the type of value you enter in the input parameter of the function
+    // Exercise 11
+    // Create a function that returns the type of the value you enter in the input parameter of the function
 
-    function checkType(aValue) {
+    function checkType(aValue){
         return typeof aValue;
     }
 
-    console.log(checkType(1));
-    console.log(checkType('apex'));
-    console.log(checkType(true));
+    console.log('checkType(1) : ' + checkType(1));
+    console.log('checkType(\'Apex\') : ' + checkType('Apex'));
+    console.log('checkType(true) : ' + checkType(true));
 
-    //Exercise 12
-    //create a function that takes in an array of values and console.logs the data of each type
+    // Exercise 12
+    // Create a function that takes in an array of values and console.logs the data type of each.
 
-    function checkTypes(anArray) {
-        for (var x = 0; x < anArray.length; x++) {
-            console.log(checkType(anArray[x]));
+    function checkTypes(anArray){
+
+        for(var x = 0; x < anArray.length; x++ ){
+            // console.log('x: '+ x);
+            console.log( checkType(anArray[x]) );
         }
+
     }
 
-    console.log(checkTypes(FavoriteFoods))
-    //Exercise 13
-    //Write a function called isString that accepts a single input, and returns true if the data type is a string or false if it is not a string.
+    checkTypes([2,'Fer', false]);
+    checkTypes([10]);
 
-    function isString(input) {
-        return checkType(input === "string")
+    /* ------------------------------------------------- */
+    // Exercise 13
+    // Write a function called isString that accepts a single input, and returns true if the data type is a string or false if it is not a string
+
+    function isString(item){
+        return checkType(item) === "string";
     }
 
-    console.log(isString(true));
-    console.log(isString("hello"));
+    console.log('isString(true) ' + isString(true)); // returns false
+    console.log('isString("hello") ' + isString("hello")); // returns true
 
-    //Exercise 14
-    //Write a function called isNumber that accepts a single input, and returns true if the data type is a number or false if it is not
+    /* ------------------------------------------------- */
+    // Exercise 14
+    // Write a function called isNumber that accepts a single input, and returns true if the data type is a number or false if it is not a number
 
-    function isNumber(input) {
-        return typeof (input === number)
-        }
-        console.log(isNumber("Hi"));
-        console.log(isNumber("42"));
+    function isNumber(aNumber) {
+        return typeof aNumber === "number";
+    }
 
+    console.log('isNumber("Hi"): ' + isNumber("Hi")); // returns false
+    console.log('isNumber(42):' + isNumber(42)); // returns true
+
+    // Exercise 15
+    // Create a function that generates and returns a random number between 0 and 10
+    function getRandomNumber(){
+        return Math.floor(Math.random() * 11);
+    }
+
+    console.log(getRandomNumber());
+
+    // Exercise 16
+
+    // Create an array with your classmates names in it.
+    var classmatesArray = ["Evelyn","Emily","Esai","Jacob","Ramon","Moriah","Roshan","Nayoung","DeLayne","Sung","Val","Sarah","Ron","Rex","Ry","Tyler"];
+
+    console.log('classmatesArray', classmatesArray);
+    // Exercise 17
+    // Create a function to that returns a random item from an array.
+    function getRandomItem(array) {
+        var randomIndex = getRandomNumber();
+        return array[randomIndex];
+    }
+
+    console.log('getRandomItem(classmatesArray): ', getRandomItem(classmatesArray));
 </script>
 </body>
 </html>
