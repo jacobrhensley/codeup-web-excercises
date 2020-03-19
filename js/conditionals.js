@@ -79,19 +79,37 @@ isOddOrEven(number);
  */
 
 function analyzeColor(color) {
-    switch (color) {
-        case 'blue':
-            console.log("blue is the color of the sky");
-            break;
-        case 'red':
-            console.log("Strawberries are red");
-            break;
-        case 'cyan':
-            console.log("I don't know anything about cyan");
-            break;
-        default :
-            console.log(randomColor + " is not defined in the list");
-            break;
+    if (color === randomColor) {
+        switch (color) {
+            case 'blue':
+                console.log("blue is the color of the sky");
+                break;
+            case 'red':
+                console.log("Strawberries are red");
+                break;
+            case 'cyan':
+                console.log("I don't know anything about cyan");
+                break;
+            default :
+                console.log(color + " is not defined in the list");
+                break;
+        }
+    }
+    if (color === userColor) {
+        switch (userColor) {
+            case 'blue':
+                alert("blue is the color of the sky");
+                break;
+            case 'red':
+                alert("Strawberries are red");
+                break;
+            case 'cyan':
+                alert("I don't know anything about cyan");
+                break;
+            default :
+                alert(userColor + " is not defined in the list");
+                break;
+        }
     }
 }
 
@@ -122,7 +140,9 @@ analyzeColor(randomColor);
  * function to show it to the user.
  */
 
+var userColor = prompt("please enter a color").toLowerCase();
 
+analyzeColor(userColor);
 
 /* ########################################################################## */
 
@@ -154,4 +174,27 @@ analyzeColor(randomColor);
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+var totalAmount = prompt("What is your total cost in items?");
+
+function calculateTotal(number) {
+    if (luckyNumber === 0) {
+        alert("You get no discount!");
+    } else if (luckyNumber === 1) {
+        alert("You get a 10% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.10 * parseInt(totalAmount))));
+    } else if (luckyNumber === 2) {
+        alert("You get a 25% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.25 * parseInt(totalAmount))));
+    } else if (luckyNumber === 3) {
+        alert("You get a 35% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.35 * parseInt(totalAmount))));
+    } else if (luckyNumber === 4) {
+        alert("You get a 50% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.50 * parseInt(totalAmount))));
+    } else if (luckyNumber === 5) {
+        alert("You get a 100% discount! Your old total used to be: $" + totalAmount + " now you pay: $" + (parseInt(totalAmount) - (parseInt(totalAmount))));
+    } else {
+        alert("We dont seem to have enough information.");
+    }
+    console.log(luckyNumber);
+}
+
+calculateTotal(luckyNumber);
