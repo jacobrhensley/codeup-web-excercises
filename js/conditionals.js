@@ -16,6 +16,48 @@
  * Can you refactor your code to use functions?
  */
 
+var wantsToEnterNumber = confirm("Would you like to enter a number?")
+
+if (wantsToEnterNumber) {
+    var number = prompt("Please enter your number.")
+} else {
+    alert("Thats ok, thank you!")
+}
+
+function evenOrOdd(number) {
+    if (wantsToEnterNumber) {
+        if (parseInt(number) % 2 === 0) {
+            alert("Your number is even!")
+        } else {
+            alert("Your number is odd!")
+        }
+    }
+}
+
+evenOrOdd(number);
+
+function plus100(number) {
+    if (wantsToEnterNumber) {
+        if (number) {
+            alert("Your number added to 100 is: " + (parseInt(number) + 100))
+        }
+    }
+}
+
+plus100(number);
+
+function isOddOrEven(number) {
+    if (wantsToEnterNumber) {
+        if (number >= 0) {
+            alert("Your number is a positive number!")
+        } else {
+            alert("Your number is negative!")
+        }
+    }
+}
+
+isOddOrEven(number);
+
 /* ########################################################################## */
 
 /**
@@ -36,6 +78,23 @@
  * console.logging the function's return value
  */
 
+function analyzeColor(color) {
+    switch (color) {
+        case 'blue':
+            console.log("blue is the color of the sky");
+            break;
+        case 'red':
+            console.log("Strawberries are red");
+            break;
+        case 'cyan':
+            console.log("I don't know anything about cyan");
+            break;
+        default :
+            console.log(randomColor + " is not defined in the list");
+            break;
+    }
+}
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -49,6 +108,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
+analyzeColor(randomColor);
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
@@ -60,6 +121,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+
 
 /* ########################################################################## */
 
