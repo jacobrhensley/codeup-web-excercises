@@ -180,21 +180,20 @@ var totalAmount = prompt("What is your total cost in items?");
 
 function calculateTotal(number) {
     if (luckyNumber === 0) {
-        alert("You get no discount!");
+        alert("You got: " + luckyNumber + ", giving you no discount!");
     } else if (luckyNumber === 1) {
-        alert("You get a 10% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.10 * parseInt(totalAmount))));
+        alert("You got: " + luckyNumber + ", giving you a 10% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.10 * parseInt(totalAmount))));
     } else if (luckyNumber === 2) {
-        alert("You get a 25% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.25 * parseInt(totalAmount))));
+        alert("You got: " + luckyNumber + ", giving you a 25% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.25 * parseInt(totalAmount))));
     } else if (luckyNumber === 3) {
-        alert("You get a 35% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.35 * parseInt(totalAmount))));
+        alert("You got: " + luckyNumber + ", giving you a 35% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.35 * parseInt(totalAmount))));
     } else if (luckyNumber === 4) {
-        alert("You get a 50% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.50 * parseInt(totalAmount))));
+        alert("You got: " + luckyNumber + ", giving you a 50% discount. Your old total used to be: $" + totalAmount + " now your total is: $" + (parseInt(totalAmount) - (.50 * parseInt(totalAmount))));
     } else if (luckyNumber === 5) {
-        alert("You get a 100% discount! Your old total used to be: $" + totalAmount + " now you pay: $" + (parseInt(totalAmount) - (parseInt(totalAmount))));
+        alert("You got: " + luckyNumber + ", giving you a 100% discount! Your old total used to be: $" + totalAmount + " now you pay: $" + (parseInt(totalAmount) - (parseInt(totalAmount))));
     } else {
         alert("We dont seem to have enough information.");
     }
-    console.log(luckyNumber);
 }
 
 calculateTotal(luckyNumber);
