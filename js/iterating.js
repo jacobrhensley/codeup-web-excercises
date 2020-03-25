@@ -7,6 +7,7 @@
      * 'names'.
      */
     var names = ['Jacob', 'Emily', 'Harley', 'Ellie'];
+    console.log(names);
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
@@ -27,7 +28,7 @@
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
-    for (var index = 0; index <= 3; index++) {
+    for (var index = 0; index < names.length; index++) {
         console.log(names[index])
     }
     /**
