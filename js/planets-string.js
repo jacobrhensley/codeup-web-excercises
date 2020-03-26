@@ -34,7 +34,11 @@
 
     var planetsUl = prepUl.join('</li><li>');
 
-    console.log('<ul><li>' + planetsUl + '</li></ul>');
+    var completePlanets = ('<ul><li>' + planetsUl + '</li></ul>');
+
+    document.write(completePlanets);
+
+    console.log(completePlanets);
 
     //Douglas' extra example of how we could create the ul without using the .join method but instead using a loop
     var ulList = "";
