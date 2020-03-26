@@ -8,9 +8,15 @@ showMultiplicationTable(9);
 showMultiplicationTable(12);
 
 
+<<<<<<< HEAD
 for (i = 1; i <= 10; i++) {
     var random = Math.floor(Math.random() * 200) + 1;
     if (random % 2 === 0) {
+=======
+    for (i = 1; i <= 10; i++) {
+        var random = Math.floor(Math.random() * 200) + 20;
+        if(random % 2 === 0){
+>>>>>>> for-loops
         console.log(random + ' is even');
     } else
         console.log(random + ' is odd')
