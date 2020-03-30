@@ -14,8 +14,8 @@
     var person = {
         firstName: 'Jacob',
         lastName: 'Hensley',
-        sayHello: function(){
-        console.log('Hello from ' + person.firstName + ' ' + person.lastName);
+        sayHello: function () {
+            return 'Hello from ' + person.firstName + ' ' + person.lastName;
         }
     };
     console.log(person.firstName);
@@ -52,14 +52,13 @@
         {name: 'George', amount: 320}
     ];
 
-    shoppers.forEach(function(item) {
-        if(item.amount< 200){
+    shoppers.forEach(function (item) {
+        if (item.amount < 200) {
             console.log(item.name + ': Original Cost: $' + item.amount + ' Amount after Promo: $' + item.amount + '. Price below $200, did not meet Promo Expectations');
         } else {
-        console.log(item.name + ': Original Cost: $' + item.amount + ' Amount after Promo: $' + (item.amount * .88));
+            console.log(item.name + ': Original Cost: $' + item.amount + ' Amount after Promo: $' + (item.amount * .88));
         }
     });
-
 
 
     /** TODO:
@@ -75,6 +74,47 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {
+            title: 'The Salmon of Doubt',
+            author: {
+                firstName: 'Douglas',
+                lastName: 'Adams',
+            }
+        },
+        {
+            title: 'Harry Potter',
+            author: {
+                firstName: 'J.K.',
+                lastName: 'Rowlings',
+            }
+        },
+        {
+            title: 'Rewind',
+            author: {
+                firstName: 'William',
+                lastName: 'Sleator',
+            }
+        },
+        {
+            title: 'The Outsiders',
+            author: {
+                firstName: 'S.E.',
+                lastName: 'Hinton',
+            }
+        },
+        {
+            title: '1984',
+            author: {
+                firstName: 'George',
+                lastName: 'Orwell',
+            }
+        },
+    ];
+
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -99,7 +139,13 @@
      *      ---
      *      ...
      */
-
+    books.forEach(function (book) {
+        var index = books.indexOf(book);
+        console.log('Book # ' + (index+1));
+        console.log('Title: ' + book.title);
+        console.log('Author: ' + book.author.firstName + ' ' +  book.author.lastName);
+        console.log('---')
+    });
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
