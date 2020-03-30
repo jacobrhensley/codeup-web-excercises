@@ -141,9 +141,10 @@
      */
     books.forEach(function (book) {
         var index = books.indexOf(book);
+        var authorName = book.author.firstName + ' ' +  book.author.lastName;
         console.log('Book # ' + (index+1));
         console.log('Title: ' + book.title);
-        console.log('Author: ' + book.author.firstName + ' ' +  book.author.lastName);
+        console.log('Author: ' + authorName);
         console.log('---')
     });
     /**
@@ -156,5 +157,10 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
+function createBook(title, authorName){
+    return {
+            title: prompt('What is the title of '),
+                authorName: prompt()
+        },
+    }
 })();
