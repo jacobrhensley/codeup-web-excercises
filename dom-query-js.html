@@ -45,13 +45,15 @@
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-        if (listItems[0]) {
-            listItems[0].style.color = 'blue';
+        for (var i = 1; i < listItems.length; i++) {
+            if (listItems[0]) {
+                listItems[0].style.color = 'blue';
+            }
+            listItems[i].style.color = 'grey';
         }
-        listItems[1].style.color = 'grey';
-        listItems[2].style.color = 'grey';
-        listItems[3].style.color = 'grey';
-        listItems[4].style.color = 'grey';
+        // listItems[2].style.color = 'grey';
+        // listItems[3].style.color = 'grey';
+        // listItems[4].style.color = 'grey';
 
 
 
