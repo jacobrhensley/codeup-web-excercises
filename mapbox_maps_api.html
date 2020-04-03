@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map Exercise</title>
+    <script src="js/keys.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet'/>
+</head>
+<body>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-96.4593, 32.9309],
+        zoom: 16,
+    });
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-96.4593, 32.9309])
+        .addTo(map);
+
+    var popup = new mapboxgl.Popup()
+        .setHTML("<h1>Zanata</h1>")
+        .addTo(map);
+
+    marker.setPopup(popup);
+</script>
+
+</body>
+</html>
