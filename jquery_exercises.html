@@ -19,13 +19,25 @@
     "use strict";
 
     $(document).ready(function(){
-        alert($('h1').html());
-        //
-        // $('.codeup').css('border', '1px solid red')
-        $('li').css('font-size', '20px');
-        $('h1, p, li');
-
-
+     var changeH1Color = function(){
+         $('h1').css('background-color', 'maroon')
+     };
+     var changeBackH1Color = function(){
+         $('h1').css('background-color', 'white')
+     };
+     var font18 = function(){
+         $('p').css('font-size', '18px')
+     };
+     var redText = function(){
+         $('li').css('color', 'red')
+     };
+        var blackText = function(){
+            $('li').css('color', 'black')
+        };
+     $('h1').click(changeH1Color);
+     $('h1').dblclick(changeBackH1Color);
+     $('p').dblclick(font18);
+     $('li').hover(redText,blackText);
     });
 </script>
 </body>
