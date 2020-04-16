@@ -8,40 +8,50 @@
 </head>
 <body>
 <div class="container" id="card"></div>
-<div class="card" style="width: 18rem;">
-    <div class="card-header"></div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"></li>
-        <li class="list-group-item"></li>
-        <li class="list-group-item"></li>
-        <li class="list-group-item"></li>
-        <li class="list-group-item"></li>
-    </ul>
-</div>
+
 
 <script src="js/keys.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
     "use strict";
-    $.get("http://api.openweathermap.org/data/2.5/weather", {
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
         "APPID": WEATHERKEY,
         "q":     "Rowlett, US",
         "units": "imperial"
     }).done(function(weatherData){
         console.log(weatherData);
         var weatherCard = "";
-        weatherCard = "<div class=\"card\" style=\"width: 18rem;\">\n" +
-            "    <div class=\"card-header\">"+weatherData.dt+"</div>\n" +
-            "    <ul class=\"list-group list-group-flush\">\n" +
-            "        <li class=\"list-group-item\">"+weatherData.weather[0].icon+"</li>\n" +
-            "        <li class=\"list-group-item\">Description: "+weatherData.weather[0].description+"</li>\n" +
-            "        <li class=\"list-group-item\">Humidity: "+weatherData.main.humidity+"</li>\n" +
-            "        <li class=\"list-group-item\">Wind: "+weatherData.wind.speed+"</li>\n" +
-            "        <li class=\"list-group-item\">Pressure: "+weatherData.main.pressure+"</li>\n" +
-            "    </ul>\n" +
-            "</div>";
-        $("#card").append(weatherCard);
-console.log(weatherCard)
+
+for(var i = 0; i < weatherData.list.length; i += 8) {
+    var imgUrl = "http://openweathermap.org/img/w/"+weatherData.list[i].weather[0].icon+".png";
+    weatherCard = "<div class=\"card\" style=\"width: 18rem;\">\n" +
+        "    <div class=\"card-header\">" + weatherData.list[i].dt_txt +"</div>\n" +
+        "    <ul class=\"list-group list-group-flush\">\n" +
+        "        <li class=\"list-group-item\">" +weatherData.list[i].main.temp_max +"/"+ weatherData.list[i].main.temp_min + "<br><img src=\""+ imgUrl +"\"id=\"icon\" alt=\"weather icon\"></li>\n" +
+        "        <li class=\"list-group-item\">Description: " + weatherData.list[i].weather[0].description + "</li>\n" +
+        "        <li class=\"list-group-item\">Humidity: " + weatherData.list[i].main.humidity + "</li>\n" +
+        "        <li class=\"list-group-item\">Wind: " + weatherData.list[i].wind.speed + "</li>\n" +
+        "        <li class=\"list-group-item\">Pressure: " + weatherData.list[i].main.pressure + "</li>\n" +
+        "    </ul>\n" +
+        "</div>";
+
+    console.log(i);
+    console.log(weatherCard)
+    $("#card").append(weatherCard);
+    $("#icon").attr('src', imgUrl);
+}
+//         weatherCard = "<div class=\"card\" style=\"width: 18rem;\">\n" +
+//             "    <div class=\"card-header\">" + weatherData.list[0].dt_txt +"</div>\n" +
+//             "    <ul class=\"list-group list-group-flush\">\n" +
+//             "        <li class=\"list-group-item\">" +weatherData.list[0].main.temp_max +"/"+ weatherData.list[0].main.temp_min + "<br><img id=\"icon\" alt=\"weather icon\"></li>\n" +
+//             "        <li class=\"list-group-item\">Description: " + weatherData.list[0].weather[0].description + "</li>\n" +
+//             "        <li class=\"list-group-item\">Humidity: " + weatherData.list[0].main.humidity + "</li>\n" +
+//             "        <li class=\"list-group-item\">Wind: " + weatherData.list[0].wind.speed + "</li>\n" +
+//             "        <li class=\"list-group-item\">Pressure: " + weatherData.list[0].main.pressure + "</li>\n" +
+//             "    </ul>\n" +
+//             "</div>";
+        // console.log(weatherCard);
+        // $("#card").append(weatherCard);
     }).fail(function(errors){
         console.error(errors);
     });
