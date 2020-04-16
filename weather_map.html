@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weather_map</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<div class="container" id="card"></div>
+<div class="card" style="width: 18rem;">
+    <div class="card-header"></div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+    </ul>
+</div>
+
+<script src="js/keys.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    "use strict";
+    $.get("http://api.openweathermap.org/data/2.5/weather", {
+        "APPID": WEATHERKEY,
+        "q":     "Rowlett, US",
+        "units": "imperial"
+    }).done(function(weatherData){
+        console.log(weatherData);
+        var weatherCard = "";
+        weatherCard = "<div class=\"card\" style=\"width: 18rem;\">\n" +
+            "    <div class=\"card-header\">"+weatherData.dt+"</div>\n" +
+            "    <ul class=\"list-group list-group-flush\">\n" +
+            "        <li class=\"list-group-item\">"+weatherData.weather[0].icon+"</li>\n" +
+            "        <li class=\"list-group-item\">Description: "+weatherData.weather[0].description+"</li>\n" +
+            "        <li class=\"list-group-item\">Humidity: "+weatherData.main.humidity+"</li>\n" +
+            "        <li class=\"list-group-item\">Wind: "+weatherData.wind.speed+"</li>\n" +
+            "        <li class=\"list-group-item\">Pressure: "+weatherData.main.pressure+"</li>\n" +
+            "    </ul>\n" +
+            "</div>";
+        $("#card").append(weatherCard);
+console.log(weatherCard)
+    }).fail(function(errors){
+        console.error(errors);
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+</html>
