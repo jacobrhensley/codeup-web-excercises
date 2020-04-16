@@ -7,7 +7,7 @@
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
-<div class="container" id="card"></div>
+<div class="container d-flex" id="card"></div>
 
 
 <script src="js/keys.js"></script>
@@ -24,7 +24,7 @@
 
 for(var i = 0; i < weatherData.list.length; i += 8) {
     var imgUrl = "http://openweathermap.org/img/w/"+weatherData.list[i].weather[0].icon+".png";
-    weatherCard = "<div class=\"card\" style=\"width: 18rem;\">\n" +
+    weatherCard = "<div class=\"card m-2\" style=\"width: 18rem;\">\n" +
         "    <div class=\"card-header\">" + weatherData.list[i].dt_txt +"</div>\n" +
         "    <ul class=\"list-group list-group-flush\">\n" +
         "        <li class=\"list-group-item\">" +weatherData.list[i].main.temp_max +"/"+ weatherData.list[i].main.temp_min + "<br><img src=\""+ imgUrl +"\"id=\"icon\" alt=\"weather icon\"></li>\n" +
@@ -40,18 +40,6 @@ for(var i = 0; i < weatherData.list.length; i += 8) {
     $("#card").append(weatherCard);
     $("#icon").attr('src', imgUrl);
 }
-//         weatherCard = "<div class=\"card\" style=\"width: 18rem;\">\n" +
-//             "    <div class=\"card-header\">" + weatherData.list[0].dt_txt +"</div>\n" +
-//             "    <ul class=\"list-group list-group-flush\">\n" +
-//             "        <li class=\"list-group-item\">" +weatherData.list[0].main.temp_max +"/"+ weatherData.list[0].main.temp_min + "<br><img id=\"icon\" alt=\"weather icon\"></li>\n" +
-//             "        <li class=\"list-group-item\">Description: " + weatherData.list[0].weather[0].description + "</li>\n" +
-//             "        <li class=\"list-group-item\">Humidity: " + weatherData.list[0].main.humidity + "</li>\n" +
-//             "        <li class=\"list-group-item\">Wind: " + weatherData.list[0].wind.speed + "</li>\n" +
-//             "        <li class=\"list-group-item\">Pressure: " + weatherData.list[0].main.pressure + "</li>\n" +
-//             "    </ul>\n" +
-//             "</div>";
-        // console.log(weatherCard);
-        // $("#card").append(weatherCard);
     }).fail(function(errors){
         console.error(errors);
     });
