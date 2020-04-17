@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weather_map</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<div>
+    <div class="card-header bg-primary m-0 p-1 text-white">Weather App</div>
+    <label for="search" class="m-2 ml-5">Place</label>
+    <input type="search" id="search" class="m-2 input-group-sm" placeholder="Dallas, US">
+    <input type="submit" id="searchButton" class="btn btn-primary btn-sm" value="Find">
+    <div class="container d-flex" id="card"></div>
+</div>
+<div class="mx-auto" id='map' style='width: 1115px; height: 300px;'></div>
+
+
+
+<script src="js/keys.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+    "use strict";
+    var clickLocation = "Dallas, US";
+getWeather();
+    $('#searchButton').click(function (e) {
+        clickLocation = $('#search').val();
+        getWeather();
+        loadMap()
+             console.log('hello');
+    });
+
+        // if ($('#searchButton').click()) {
+        //     clickLocation = $('#search').value;
+        //     console.log('hello');
+        // };
+function getWeather() {
+    console.log($.get);
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        "APPID": WEATHERKEY,
+        "q": clickLocation,
+        "units": "imperial"
+    }).done(function (weatherData) {
+        $('#card').empty();
+        console.log(weatherData);
+        var weatherCard = "";
+
+        for (var i = 0; i < weatherData.list.length; i += 8) {
+            var imgUrl = "http://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png";
+            weatherCard = "<div class=\"card m-2\" style=\"width: 18rem;\">\n" +
+                "    <div class=\"card-header\">" + weatherData.list[i].dt_txt + "</div>\n" +
+                "    <ul class=\"list-group list-group-flush\">\n" +
+                "        <li class=\"list-group-item\">" + weatherData.list[i].main.temp_max + "/" + weatherData.list[i].main.temp_min + "<br><img src=\"" + imgUrl + "\"id=\"icon\" alt=\"weather icon\"></li>\n" +
+                "        <li class=\"list-group-item\">Description: " + weatherData.list[i].weather[0].description + "</li>\n" +
+                "        <li class=\"list-group-item\">Humidity: " + weatherData.list[i].main.humidity + "</li>\n" +
+                "        <li class=\"list-group-item\">Wind: " + weatherData.list[i].wind.speed + "</li>\n" +
+                "        <li class=\"list-group-item\">Pressure: " + weatherData.list[i].main.pressure + "</li>\n" +
+                "    </ul>\n" +
+                "</div>";
+
+            console.log(i);
+            console.log(weatherCard);
+            $("#card").append(weatherCard);
+            $("#icon").attr('src', imgUrl);
+        }
+    }).fail(function (errors) {
+        console.error(errors);
+    });
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<script>
+
+mapboxgl.accessToken = mapboxToken;
+
+function loadMap(){
+        $('#map').empty();
+geocode(clickLocation, mapboxToken).then(function(result) {
+    console.log(result);
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10
+    });
+    map.flyTo({center: result});
+});
+};
+    loadMap()
+</script>
+</body>
+</html>
