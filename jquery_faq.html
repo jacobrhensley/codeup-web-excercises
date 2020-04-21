@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_faq</title>
+</head>
+<body>
+<style>
+    .highlight {
+        background-color: yellow;
+    }
+
+    .bold-font {
+        font-weight: bold;
+    }
+
+    .first-item-highlight {
+        color: blue;
+    }
+
+    ul {
+        display: none;
+    }
+
+    #registration-reminder {
+        display: none;
+    }
+</style>
+<div>
+    <span id="newsLetterX">X</span>
+    <h1 id="newsLetter">Would you like to sign up for our newsletter?</h1>
+</div>
+<h2 id="registration-reminder">Please register to use the site.</h2>
+<div id="newsletter-offer">
+    <span id="offer-close-button">X</span>
+    <h1>Would you like to sign up for our newsletter?</h1>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $('#newsLetterX').click(function () {
+            $('#newsLetter').hide();
+        });
+        $('h2').fadein(8000)
+    });
+</script>
+<button class="highlight">Highlight last facts!</button>
+
+<h3>Arches</h3>
+<ul class="list">
+    <li>Arches National Park comprises 76,519 acres or 119 square miles. The park road to drive is about 18 miles to
+        the end of the pavement at Devils Garden Trailhead and the campground.
+    </li>
+    <li>In 1929 President Herbert Hoover created Arches National Monument, then in 1971 Congress designated Arches
+        as a National Park under the Nixon administration.
+    </li>
+    <li>There are more than 2000 natural sandstone arches inside Arches National Park.</li>
+    <li>Landscape Arch has the longest span of any arch in North America, 306 feet (93.3 meters), and is the fourth
+        longest in the world.
+    </li>
+</ul>
+
+<h3>Badlands</h3>
+<ul class="list">
+    <li>Badlands National Park covers a total area of 244,300 acres</li>
+    <li>The number of people visiting Badlands in 2019 was 970,998 (All Years)</li>
+    <li>Badlands was made a national park on November 10, 1978</li>
+    <li>The lowest elevation found in Badlands is 2,365 feet near the Visitor Center</li>
+</ul>
+
+<h3>Carlsbad Caverns</h3>
+<ul class="list">
+    <li>Carlsbad Caverns National Park covers a total area of 46,766 acres</li>
+    <li>The number of people visiting Carlsbad Caverns in 2019 was 440,691 (All Years)</li>
+    <li>Carlsbad Caverns was made a national park on May 14, 1930</li>
+    <li>The lowest elevation found in Carlsbad Caverns is 3,596 feet at Black River</li>
+</ul>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+
+        $('.highlight').click(function () {
+            $('ul li:last-child').css('background-color', 'yellow')
+        });
+        //     $('h3').click(function () {
+        //         $(this).next().css('font-weight', 'bold')
+        //     });
+        // });
+
+        $('#highlighter').click(function () {
+            $('ul').each(function () {
+                $(this).children().last().toggleClass('highlight');
+            });
+        });
+        $('ul').hide()
+        $('h3').click(function () {
+            //$(this).next().children().css('font-weight', 'bold');
+            $(this).next().show();
+        });
+
+        $('li').click(function () {
+            // li ---> ul -> lis of ul > first
+            $(this).parent().children().first().toggleClass('first-item-highlight')
+            //$(this).parent().children().first().css('color', 'blue');
+        });
+        $('h3').click(function(){
+            //$(this).next().children().css('font-weight', 'bold');
+            $(this).next().children().toggleClass('bold-font');
+            $(this).next().slideToggle(3000);
+        });
+        $('#offer-close-button').click(function(){
+            $(this).parent().hide();
+        });
+
+        // setTimeout(function(){
+        //     $('#registration-reminder').fadeIn(3000);
+        // }, 8000);
+
+        $('#registration-reminder').delay(8000).fadeIn(3000);
+    });
+
+</script>
+</body>
+</html>
