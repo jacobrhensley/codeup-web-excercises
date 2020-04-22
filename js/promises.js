@@ -1,26 +1,28 @@
-const url = 'https://api.github.com/users';
+const url = 'https://api.github.com/users/jacobrhensley/events/public';
 
 fetch(url, {headers: {'Authorization': GITHUBKEY}}).then(response => {
     response.json()
-        .then(users => {
-            // handle the data and do something about it
-            let html = '<ul>';
-            for(let user of users){
-                html += `<li>${user.login}</li>`
+        .then(events => {
+            console.log(events);
+            for(let i = 0; i < events.length; i++) {
+                if (events[i].type === "PushEvent") {
+                    let html = '<div>';
+                    html += "<h1>" + events[i].created_at + '</h1>';
+                    html += "</div>";
+                    document.body.innerHTML = html;
+                    break;
+                }
+
             }
-            html += '</ul>';
-            document.body.innerHTML = html;
         });
 });
+function wait(number){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve()
+        }, number);
+});
+};
+wait(1000).then(() => console.log('You\'ll see this after 1 second'));
 
-function fetchGithubUser(username){
-    fetch(`${url}/${username}`, {headers: {'Authorization': GITHUBKEY}}).then(response => {
-        response.json().then(console.log(response));
-    });
-}
-
-fetchGithubUser('jacobrhensley');
-// fetch(url, {headers: {'Authorization': 'token YOUR_TOKEN_HERE'}});
-
-// wait(1000).then(() => console.log('You\'ll see this after 1 second'));
-// wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
+wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
